@@ -35,7 +35,7 @@ terraform -v
 
 ---------------------------------------------------
 
-Terraform installation:
+Docker installation:
 
 yum install docker -y
 
