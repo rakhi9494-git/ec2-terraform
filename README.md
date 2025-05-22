@@ -18,6 +18,7 @@ sudo systemctl enable jenkins
 sudo systemctl start jenkins
 
 
+
 ---------------------------------------------------
 
 Terraform installation:
@@ -32,6 +33,15 @@ sudo mv terraform /usr/local/bin/
 
 terraform -v
 
+---------------------------------------------------
+
+Terraform installation:
+
+yum install docker -y
+
+sudo systemctl enable docker
+
+sudo systemctl start docker
 
 Backend main.tf
 -------------------
