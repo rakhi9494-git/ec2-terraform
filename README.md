@@ -17,6 +17,14 @@ sudo systemctl enable jenkins
 
 sudo systemctl start jenkins
 
+df -h /tmp
+
+sudo mount -o remount,size=2G /tmp
+
+vi /etc/fstab
+
+tmpfs /tmp tmpfs defaults,size=2G 0 0 # Change 2G to your desired size
+
 
 
 ---------------------------------------------------
