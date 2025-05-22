@@ -1,15 +1,17 @@
 # jenkins-terraform
 jenkins-terraform
 
-sudo amazon-linux-extras install java-openjdk11 -y
+Terraform installation:
 
-sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo dnf update
 
-sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+sudo dnf install java-17-amazon-corretto -y
 
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key 
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
-sudo yum install jenkins -y
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+sudo dnf install jenkins -y
 
 sudo systemctl enable jenkins
 
@@ -19,6 +21,7 @@ sudo systemctl start jenkins
 ---------------------------------------------------
 
 Terraform installation:
+
 sudo wget https://releases.hashicorp.com/terraform/0.14.7/terraform_0.14.7_linux_amd64.zip
 
 apt install unzip
