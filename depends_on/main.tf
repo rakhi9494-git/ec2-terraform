@@ -25,8 +25,8 @@ resource "aws_iam_role_policy_attachment" "my_ec2_policy" {
 }
 
 resource "aws_instance" "my_instance" {
-  ami           = "ami-0c55b159cbfafe1f0" # Example AMI ID
-  instance_type = "t2.micro"
+  ami-02010f4ba46655bb2
+  instance_type = "t3.micro"
   
   # This is where depends_on is used.
   # Terraform will not create this instance until the `aws_iam_role_policy_attachment`
