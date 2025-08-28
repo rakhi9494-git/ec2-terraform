@@ -1,16 +1,15 @@
-# Configure the AWS provider
 provider "aws" {
-  region = "us-west-2"
+  region = "ap-southeast-2" # Or your desired region
 }
 
-# 1. Define a set of instance names
+
 variable "instance_names" {
   description = "A set of unique names for the EC2 instances."
   type        = set(string)
   default     = ["web-server-01", "web-server-02"]
 }
 
-# 2. Use for_each to create instances based on the set
+
 resource "aws_instance" "example" {
   for_each = var.instance_names
 
