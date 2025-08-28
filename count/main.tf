@@ -17,7 +17,7 @@ resource "aws_instance" "example" {
   key_name = "rajdevops"
   
 
-  instance_type = "t2.micro"
+  instance_type = "t3.micro"
 
 
   tags = {
