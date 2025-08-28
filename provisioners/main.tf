@@ -1,12 +1,12 @@
 # Configure the AWS provider
 provider "aws" {
-  region = "us-west-2"
+  region = "ap-southeast-2"
 }
 
 # Creates a new EC2 instance
 resource "aws_instance" "web_server" {
-  ami           = "ami-0b0b8c62c95c862d6"
-  instance_type = "t2.micro"
+  ami           = "ami-0279a86684f669718"
+  instance_type = "t3.micro"
 
   tags = {
     Name = "Web-Server"
