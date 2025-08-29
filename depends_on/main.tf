@@ -25,7 +25,8 @@ resource "aws_iam_role_policy_attachment" "my_ec2_policy" {
 }
 
 resource "aws_instance" "my_instance" {
-  ami-02010f4ba46655bb2
+  ami           = "ami-0a0b0b06dd1636865"
+  key_name = "rajdevops"
   instance_type = "t3.micro"
   
   # This is where depends_on is used.
