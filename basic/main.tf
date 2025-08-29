@@ -1,10 +1,11 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "ap-southeast-2" # Or your desired region
 }
+
 resource "aws_instance" "my_ec2_instance" {
-  ami           = "ami-084a7d336e816906b" # Replace with a valid AMI ID for your region
+  ami           = "ami-0a0b0b06dd1636865"
   instance_type = "t3.micro"
-  key_name      = "terraform" # Reference the key pair created above
+  key_name = "rajdevops"
 
   tags = {
     Name = "MyTerraformEC2Instance"
