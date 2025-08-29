@@ -1,29 +1,20 @@
 provider "aws" {
-  region     = "us-east-1"
+  region = "ap-southeast-2" # Or your desired region
 }
 
-module "ec2_instance" {
-  source  = "terraform-aws-modules/ec2-instance/aws"
-  version = "~> 3.0"
-
-  name = "single-instance"
-
-  ami                    = "ami-0261755bbcb8c4a84"
-  instance_type          = "t2.micro"
-  key_name               = "test345"
-  monitoring             = true
-  
+resource "aws_instance" "example" {
+  ami           = "ami-0a0b0b06dd1636865"
+  key_name = "rajdevops"
   tags = {
-    Name = "terraform-instance"
-    Terraform   = "true"
-    Environment = "prod"
+    Name = "My-Terraform-EC2-Instance"
   }
 }
+
 terraform {
   backend "s3" {
-    bucket         = "mykrybucket" # Replace with your S3 bucket name
+    bucket         = "rakesh-terraform-practice" # Replace with your S3 bucket name
     key            = "terraform.tfstate" # Key is the name of the state file in the bucket
-    region         = "us-east-1" # Replace with your desired AWS region
+    region         = "ap-southeast-2" # Replace with your desired AWS region
     encrypt        = true
   }
 }
