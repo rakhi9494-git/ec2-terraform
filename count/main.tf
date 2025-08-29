@@ -14,6 +14,7 @@ resource "aws_instance" "example" {
 
   count = var.instance_count 
   ami           = "ami-0a0b0b06dd1636865"
+  instance_type = "t3.micro"
   key_name = "rajdevops"
   
 
